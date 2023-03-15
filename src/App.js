@@ -1,12 +1,12 @@
 const App = () => {
-
+  const nav = ["Home", "Exercise1", "Exercise2", "Exercise3", "Exercise4", "Exercise5", "Exercise6", "Exercise7", "Exercise8", "Exercise9"]
   const handleClick = () => {
     alert(" Clicked!")
   }
   return (
     <div className='px-32 py-12 space-y-12'>
       <div className='space-x-5'>
-        {["Home", "Exercise1", "Exercise2", "Exercise3", "Exercise4", "Exercise5", "Exercise6", "Exercise7", "Exercise8", "Exercise9"].map((link, index) => {
+        {nav.map((link, index) => {
           return (
 
             <a key={index} href={index} className='text-blue-900 underline'>{link}</a>
