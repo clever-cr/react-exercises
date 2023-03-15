@@ -1,8 +1,7 @@
+import Button from "./components/Button"
 const App = () => {
 
-  const handleClick = () => {
-    alert(" Clicked!")
-  }
+
   return (
     <div className='px-32 py-12 space-y-12'>
       <div className='space-x-5'>
@@ -13,7 +12,11 @@ const App = () => {
           )
         })}
       </div>
-      <button onClick={handleClick} className='bg-blue-900 p-2 ml-32 text-white'>Click me </button>
+      <div>
+        <Button text=" 1" />
+        <Button text=" 2" />
+        <Button text="3" />
+      </div>
 
     </div>
   )
