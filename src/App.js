@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState, useEffect } from 'react'
+import Card from "./components/Card"
+const App = () => {
+  const [userData, setUserData] = useState("");
+  useEffect(() => {
+    async function get() {
+      const res = await fetch('https://random-data-api.com/api/users/random_user?size=10')
+      const data = await res.json()
+      setUserData(data)
+    }
+    get()
+  }, [])
 
-function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <div>
+
+      {/* <div>
+        {userData.map((info, index) => {
+          return (<div key={index}>{info.address.city}</div>)
+        })}
+      </div> */}
+      {/* <div>{JSON.stringify(userData)}</div> */}
+      <button className='bg-red-200' >Fetch Random</button>
+      <Card />
+    </div >
+  )
 }
 
-export default App;
+export default App
