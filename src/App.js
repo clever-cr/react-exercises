@@ -1,27 +1,21 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import Card from "./components/Card"
 const App = () => {
-  const [userData, setUserData] = useState("");
+  const [userData, setUserData] = useState([]);
+  const get = async () => {
+    const res = await fetch('https://random-data-api.com/api/users/random_user?size=10')
+    const data = await res.json()
+    setUserData(data)
+  }
   useEffect(() => {
-    async function get() {
-      const res = await fetch('https://random-data-api.com/api/users/random_user?size=10')
-      const data = await res.json()
-      setUserData(data)
-    }
-    get()
+    get();
   }, [])
 
   return (
-    <div>
+    <div className='px-32 py-12 space-y-12'>
+      <button className='bg-red-600 text-white rounded-md mx-52 p-2 shadow-md' onClick={get}>Fetch Random</button>
+      <Card data={userData} />
 
-      {/* <div>
-        {userData.map((info, index) => {
-          return (<div key={index}>{info.address.city}</div>)
-        })}
-      </div> */}
-      {/* <div>{JSON.stringify(userData)}</div> */}
-      <button className='bg-red-200' >Fetch Random</button>
-      <Card />
     </div >
   )
 }
