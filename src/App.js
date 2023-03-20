@@ -13,11 +13,20 @@ const App = () => {
   }, [])
 
   return (
-    <div className='px-32 py-12 space-y-12'>
-      <button className='bg-red-600 text-white rounded-md mx-52 p-2 shadow-md' onClick={get}>Fetch Random</button>
-      <Card data={userData} />
+    <div>
+      <div className='space-x-5 mx-40 pt-4'>
+        {nav.map((link, index) => {
+          return (
+            <a key={index} href={index} className='text-blue-900 underline'>{link}</a>
+          )
+        })}
+      </div>
+      <div className='px-32 py-12 space-y-12'>
+        <button className='bg-red-600 text-white rounded-md mx-52 p-2 shadow-md' onClick={get}>Fetch Random</button>
+        <Card data={userData} />
+      </div >
+    </div>
 
-    </div >
   )
 }
 
