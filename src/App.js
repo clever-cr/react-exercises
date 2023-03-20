@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import Button from "./components/Button"
+const App = () => {
 
-function App() {
+  const nav = ["Home", "Exercise1", "Exercise2", "Exercise3", "Exercise4", "Exercise5", "Exercise6", "Exercise7", "Exercise8", "Exercise9"]
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='px-32 py-12 space-y-12'>
+      <div className='space-x-5'>
+        {nav.map((link, index) => {
+          return (
+
+            <a key={index} href={index} className='text-blue-900 underline'>{link}</a>
+          )
+        })}
+      </div>
+      <div>
+        <Button text=" 1" />
+        <Button text=" 2" />
+        <Button text="3" />
+      </div>
+
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
