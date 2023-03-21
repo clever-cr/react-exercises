@@ -12,7 +12,9 @@ const App = () => {
   }
 
   useEffect(() => {
+
     getUsers();
+
   }, [])
 
   return (
