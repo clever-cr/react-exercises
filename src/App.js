@@ -23,7 +23,7 @@ const App = () => {
         {nav.map((link, index) => <a key={index} href={index} className='text-blue-900 underline'>{link}</a>)}
       </div>
       <div className='px-32 py-12 space-y-12'>
-        <button className='bg-red-600 text-white rounded-md mx-52 p-2 shadow-md' onClick={getUsers}>Fetch Random</button>
+        <button className='bg-red-600 text-white rounded-md mx-[512px] p-2 shadow-md' onClick={getUsers}>Fetch Random</button>
         <div className='grid grid-cols-2 bg-green-50 gap-12 p-12'>
           {userData.map((item) => {
             return (
