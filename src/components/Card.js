@@ -1,5 +1,7 @@
 import "../App.css"
+
 const Card = ({ avatar, first_name, last_name, employment }) => {
+
     return (
         <div>
             <div className="bg-white flex flex-col p-4 rounded-md w-[500px] flip-card ">
